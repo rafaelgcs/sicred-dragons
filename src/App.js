@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from "./logo.svg";
+// // import './App.css';
+import React from "react";
+import { useRoutes } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
+import ScrollToTop from "./components/default/scroll_to_top";
+import routes from "./router";
+import "./assets/scss/_global.scss";
+import "animate.css";
 
-function App() {
+const App = () => {
+  const content = useRoutes(routes);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div>
+        <Toaster position="top-center" reverseOrder={false} />
+      </div>
+      <ScrollToTop>{content}</ScrollToTop>
+    </>
   );
-}
+};
 
 export default App;
