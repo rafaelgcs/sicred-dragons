@@ -38,7 +38,7 @@ const Signin = () => {
           <div className="spacing">
             <div className="panel">
               <h1>Hello and Welcome!</h1>
-              <p>It's a challenge of SICRED</p>
+              <p>It's a challenge of SICREDI</p>
               <i className="icon-dragon" style={{ fontSize: 100 }}></i>
               <p>You will manage dragons when signin with an account!</p>
               <div className="bg-light text-primary p-1 rounded d-none d-md-block">
@@ -67,7 +67,7 @@ const Signin = () => {
       </div>
       <footer>
         <p>
-          Created with <i className="icon-heart"></i>. Created to Sicred Dragons
+          Created with <i className="icon-heart"></i>. Created to SicredI Dragons
           Challenge. By:
           <a target="_blank" rel="noreferrer" href="https://rafaelgcs.com">
             _Rafael Guimarães
