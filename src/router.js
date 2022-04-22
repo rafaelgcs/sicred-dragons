@@ -38,14 +38,8 @@ const AuthenticatedPage = ({ component: Component, initial }) =>
 
 // Status
 
-// const Status404 = Loader(lazy(() => import("./pages/status/status_404")));
-// const Status500 = Loader(lazy(() => import("./pages/status/status_500")));
-// const StatusComingSoon = Loader(
-//   lazy(() => import("./pages/status/comming_soon"))
-// );
-// const StatusMaintenance = Loader(
-//   lazy(() => import("./pages/status/maintenance"))
-// );
+const Status404 = Loader(lazy(() => import("./pages/status/404")));
+const Status500 = Loader(lazy(() => import("./pages/status/500")));
 
 const routes = [
   {
@@ -102,49 +96,28 @@ const routes = [
       },
     ],
   },
+  {
+    path: "/status",
+    element: <BaseLayout />,
+    children: [
+      {
+        path: "/status",
+        element: <Navigate to="/status/404" replace />,
+      },
+      {
+        path: "/status/404",
+        element: <Status404 />,
+      },
+      {
+        path: "/status/500",
+        element: <Status500 />,
+      },
+    ],
+  },
+  {
+    path: "*",
+    element: <Navigate to="/status/404" />,
+  },
 ];
-
-// const routes = [
-//   // Website
-//   {
-//     path: "/",
-//     element: <BaseLayout />,
-//     children: [
-//       {
-//         path: "/",
-//         element: <LandingPage />,
-//       },
-//     ],
-//   },
-//   {
-//     path: "/status",
-//     children: [
-//       {
-//         path: "/status",
-//         element: <Navigate to="404" replace />,
-//       },
-//       {
-//         path: "404",
-//         element: <Status404 />,
-//       },
-//       {
-//         path: "500",
-//         element: <Status500 />,
-//       },
-//       {
-//         path: "maintenance",
-//         element: <StatusMaintenance />,
-//       },
-//       {
-//         path: "coming-soon",
-//         element: <StatusComingSoon />,
-//       },
-//     ],
-//   },
-//   {
-//     path: "*",
-//     element: <Status404 />,
-//   },
-// ];
 
 export default routes;

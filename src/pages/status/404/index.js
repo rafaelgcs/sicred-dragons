@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 const Status404 = () => {
   const navigate = useNavigate();
   return (
-    <div className="row align-items-center justify-content-center">
+    <div className="row align-items-center justify-content-center w-100">
       <div className="col-auto text-center text-primary">
         <p style={{ fontSize: 80 }}>
           <i className="icon-fire"></i>
